@@ -18,32 +18,9 @@
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
-    h1, .generation button, .pokemon h3 {
-      font-family: 'Open Sans', sans-serif;
-    }
-
     h1 {
       text-align: center;
       margin-bottom: 20px;
-    }
-
-    .generation {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .generation button {
-      background-color: #eee;
-      border: none;
-      padding: 5px 10px; /* Adjusted button padding */
-      border-radius: 5px;
-      margin: 0 5px; /* Adjusted button margin */
-      cursor: pointer;
-    }
-
-    .generation button.active {
-      background-color: #ddd;
     }
 
     .pokedex {
@@ -75,13 +52,7 @@
 <body>
   <div class="container">
     <h1>Pokédex</h1>
-
-    <div class="generation">
-      <button class="active">Gen 1</button>
-      <button>Gen 2</button>
-      <button>Gen 3</button>
-    </div>
-
+    
     <div class="pokedex">
       <div class="pokemon" onclick="location.href='assets/pokedex/0001.html';" style="cursor: pointer;">
         <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="Bulbasaur">
@@ -122,25 +93,5 @@
     </div>
   </div>
 
-  <script>
-    const generationButtons = document.querySelectorAll('.generation button');
-    const pokedex = document.querySelector('.pokedex');
-
-    generationButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        generationButtons.forEach(b => b.classList.remove('active'));
-        button.classList.add('active');
-
-        // Update pokedex content based on selected generation
-        // Example:
-        if (button.textContent === 'Gen 1') {
-          // Load generation 1 pokemon data
-        } else if (button.textContent === 'Gen 2') {
-          // Load generation 2 pokemon data
-        }
-        // ... and so on
-      });
-    });
-  </script>
 </body>
 </html>
